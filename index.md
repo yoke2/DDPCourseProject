@@ -48,11 +48,14 @@ args(geoCode)
 ```
 
 ```r
-geoCode("Johns Hopkins University, Baltimore")
+address <- geoCode("Johns Hopkins University, Baltimore");address
 ```
 
 ```
-## Error: could not find function "getURL"
+## [1] "39.329901"                                         
+## [2] "-76.6205184"                                       
+## [3] "APPROXIMATE"                                       
+## [4] "Johns Hopkins University, Baltimore, MD 21218, USA"
 ```
 
 --- .class #id 

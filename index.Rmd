@@ -35,6 +35,10 @@ Limitations
 
 ## Mechanism
 ```{r echo=FALSE}
+library(RCurl)
+library(bitops)
+library(RJSONIO)
+library(plyr)
 url <- function(address, return.call = "json", sensor = "false") {
     root <- "http://maps.google.com/maps/api/geocode/"
     u <- paste(root, return.call, "?address=", address, "&sensor=", sensor, sep = "")
@@ -60,9 +64,9 @@ geoCode <- function(address,verbose=FALSE) {
 ```
 The main function that queries Google Maps API for latitude and longtitude information is the `geoCode` function. This function takes in the search criteria and returns the latitude, longtitude, type of location and address identified.
 
-```{r}
+```{r cache=TRUE}
 args(geoCode)
-geoCode("Johns Hopkins University, Baltimore")
+address <- geoCode("Johns Hopkins University, Baltimore");address
 ```
 
 --- .class #id 
